@@ -1,0 +1,52 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Rating
+ *
+ * @ORM\Table(name="rating", indexes={@ORM\Index(name="pseudo_vote", columns={"pseudo_vote"}), @ORM\Index(name="pseudo_voteur", columns={"pseudo_voteur"})})
+ * @ORM\Entity
+ */
+class Rating
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="rate", type="integer", nullable=false)
+     */
+    private $rate;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pseudo_voteur", referencedColumnName="pseudo")
+     * })
+     */
+    private $pseudoVoteur;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pseudo_vote", referencedColumnName="pseudo")
+     * })
+     */
+    private $pseudoVote;
+
+
+}

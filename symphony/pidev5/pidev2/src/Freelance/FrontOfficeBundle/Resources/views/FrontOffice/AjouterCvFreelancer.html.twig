@@ -1,0 +1,45 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<div class="container">
+
+					<div class="row">
+<div class="span6">
+
+    <div class="alert alert-success hidden" id="contactSuccess">
+        <strong>Success!</strong> Your message has been sent to us.
+    </div>
+
+    <div class="alert alert-error hidden" id="contactError">
+        <strong>Error!</strong> There was an error sending your message.
+    </div>
+
+    <h2 class="short"><strong>Ajouter cv </strong> Us</h2>
+    <form  id="contactForm" method="post">
+        <div class="row controls">
+            <div class="span3 control-group">
+
+                <label >{{form_label(form.experience_cv)}}</label>
+                {{ form_widget(form.experience_cv) }}
+
+                <label>{{form_label(form.langue_cv)}}</label>
+                {{ form_widget(form.langue_cv) }}
+
+                <label>{{form_label(form.Certification_cv)}}</label>
+                {{ form_widget(form.Certification_cv) }}
+
+                <label>{{form_label(form.formation_cv)}}</label>
+                {{ form_widget(form.formation_cv) }}
+
+
+                <div class="btn-toolbar">
+                    <input type="submit" value="Ajouter Mon Cv" class="btn btn-primary btn-large" data-loading-text="Loading...">
+
+                </div>
+            </div>
+             {{ form_rest(form)}}
+    </form>
+</div>
+</div></div></div>
+
+ {% endblock %} 

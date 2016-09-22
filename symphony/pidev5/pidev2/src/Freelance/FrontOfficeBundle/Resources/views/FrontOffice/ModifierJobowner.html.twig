@@ -1,0 +1,64 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+
+<<div class="container">
+
+					<div class="row">
+<div class="span6">
+
+    <div class="alert alert-success hidden" id="contactSuccess">
+        <strong>Success!</strong> Your message has been sent to us.
+    </div>
+
+    <div class="alert alert-error hidden" id="contactError">
+        <strong>Error!</strong> There was an error sending your message.
+    </div>
+
+    <h2 class="short"><strong>Modifier Mon Profil</strong></h2>
+    <form  id="contactForm" method="post"  action="{{ path('freelance_front_office_JobownerModifier', {id:app.user.id} ) }}">
+
+
+
+        <div class="row controls">
+            <div class="span6 control-group">
+            
+                <label>{{form_label(form.nom)}}</label>
+              <label>{{ form_widget(form.nom) }}</label>
+                      
+              <label> {{form_label(form.prenom)}}</label>
+              {{ form_widget(form.prenom) }}
+                      
+           <label>{{form_label(form.pays)}} </label>
+          {{ form_widget(form.pays) }}
+                  
+          <label>{{form_label(form.ville)}}</label>
+              {{ form_widget(form.ville) }}
+          
+
+          
+             <label>     {{form_label(form.email)}}</label>
+              {{ form_widget(form.email) }}
+          
+               <label>  {{form_label(form2.societe_j)}}</label>
+              {{ form_widget(form2.societe_j) }}
+         
+               <br/>
+  
+ <input type="submit" value="Modifier Mon Profil" class="btn btn-primary btn-large" data-loading-text="Loading..."/>
+
+                </div>
+               
+            </div>
+
+           {{ form_rest(form)}}
+      {{ form_rest(form2)}}
+   
+    </form>
+   
+        </div> </div></div>
+  
+  
+ {% endblock %} 
+
+

@@ -1,0 +1,147 @@
+freelance_front_office_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FreelanceBackOfficeBundle:Default:index}
+
+freelance_Back_ModifierProfil:
+    path:     /ModifierProfil/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:ModifierProfil }
+
+
+freelance_Back_indexSuperAdmin:
+    path:     /indexSuper
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:index}
+
+freelance_Back_indexAdmin:
+    path:     /indexAdmin
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:index}
+freelance_Back_TableAdmin:
+    path:     /Table
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:Table}
+freelance_Back_RecAdmin:
+    path:     /TableRec
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:TableRec}
+freelance_Back_StatAdmin:
+    path:     /StatPays
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:StatPays}
+freelance_Back_StatProjetAdmin:
+    path:     /StatProjet
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:StatProjet}
+freelance_Back_GestionMessage:
+    path:     /GestionMessage
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:GestionMessage}
+    
+    
+freelance_Back_EnvoyerMessage:
+    path:     /EnvoyerMessage
+    defaults: { _controller: FreelanceBackOfficeBundle:Messagerie:ajout }
+freelance_Back_AfficherMessage:
+    path:     /AfficherMessage/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:Messagerie:AfficherMessagerie }
+freelance_Back_RechercherMessage:
+    path:     /RechercherMessage/{pseudo}
+    defaults: { _controller: FreelanceBackOfficeBundle:Messagerie:rechercher }    
+
+
+freelance_Back_ajouterAdmin:
+    path:     /ajouterAdmin
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:ajoutAdmin }   
+    
+freelance_Back_AfficherAdmin:
+    path:     /afficherAdmin
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:Afficher }
+freelance_Back_modifierAdmin:
+    path:     /modifierAdmin/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:modifier }  
+freelance_Back_deleteAdmin:
+    path:     /deleteAdmin/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:delete }    
+freelance_Back_chercherAdmin:
+    path:     /chercherAdmin
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:Rechercher } 
+    
+    
+    
+freelance_Back_afficherJobowner:
+    path:     /afficherJobowner
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:AfficherJobowner}  
+freelance_Back_deleteJobowner:
+    path:     /deleteJobowner/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:supprimerJobowner}    
+freelance_Back_chercherJobowner:
+    path:     /chercherJobowner
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:rechercherJobowner}    
+    
+    
+    
+    
+    
+freelance_Back_afficherfreelancer:
+    path:     /afficherfreelancer
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:AfficherFreelancer }
+freelance_Back_deletefreelancer:
+    path:     /deletefreelancer/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:supprimerfreelancer }    
+freelance_Back_chercherfreelancer:
+    path:     /chercherfreelancer
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:rechercherFreelancer }    
+
+
+
+
+freelance_Back_afficherReclamation:
+    path:     /afficherReclamation
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:AfficherReclamation}
+freelance_Back_deleteReclamation:
+    path:     /deleteReclamation/{id}
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:supprimerReclamation } 
+freelance_Back_RepondreRecAdmin:
+    path:     /RepondreRec
+    defaults: { _controller: FreelanceBackOfficeBundle:Administrateur:RepondreRec}
+    
+    
+    
+    
+    
+    
+freelance_Back_HistogrammePays:
+    path:     /HistogrammePays
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:ChartHistogrammePays } 
+freelance_Back_chart:
+    path:     /chart
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartLinePays } 
+
+freelance_Back_Pie:
+    path:     /Pie
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartPiePays } 
+    
+    
+    
+    
+    
+freelance_Back_chartlineProjet:
+    path:     /chartlineProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartLineProjet } 
+freelance_Back_chartProjet:
+    path:     /chartProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:ChartHistogrammeProjet } 
+freelance_Back_PieProjet:
+    path:     /PieProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartPieProjet } 
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+freelance_Back_ViewAdmin:
+    path:     /ViewAdmin
+    defaults: { _controller: FreelanceBackOfficeBundle:SuperAdmin:View }

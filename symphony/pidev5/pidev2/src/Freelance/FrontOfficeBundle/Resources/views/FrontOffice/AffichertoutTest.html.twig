@@ -1,0 +1,54 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+
+{%block content%}
+
+
+<h1> Liste Des Tests</h1>
+
+
+
+    <table  class="table table-striped">
+        <thead>
+        
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+
+                <th>Actions</th>
+                <th>Passer test</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('freelance_front_office_AfficherTest'
+                        ,{ 'nom': entity.nom }) }}">{{ entity.nom }}</a></td>
+                <td>{{ entity.nom }}</td>
+
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('freelance_front_office_AfficherTest', { 'nom': entity.nom }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('freelance_front_office_ModifierTest', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('freelance_front_office_SuprimerTest', { 'id': entity.id }) }}">delete</a>
+                    </li>
+                </ul>
+                </td>
+                <th><a href="{{ path('freelance_front_office_PassageTest', { 'id': entity.id ,'idf' : app.user.id}) }}">passer le test</a></th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+            <a href="{{ path('freelance_front_office_AjouterTest') }}">
+                Create a new entry
+            </a>
+
+    {% endblock %}

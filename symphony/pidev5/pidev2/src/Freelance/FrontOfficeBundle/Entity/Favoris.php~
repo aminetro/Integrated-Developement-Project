@@ -1,0 +1,45 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Favoris
+ *
+ * @ORM\Table(name="favoris", indexes={@ORM\Index(name="id_f", columns={"id_f"}), @ORM\Index(name="id_p", columns={"id_p"})})
+ * @ORM\Entity
+ */
+class Favoris
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Projet
+     *
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_p", referencedColumnName="id")
+     * })
+     */
+    private $idP;
+
+    /**
+     * @var \Freelancer
+     *
+     * @ORM\ManyToOne(targetEntity="Freelancer")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_f", referencedColumnName="id_f")
+     * })
+     */
+    private $idF;
+
+
+}

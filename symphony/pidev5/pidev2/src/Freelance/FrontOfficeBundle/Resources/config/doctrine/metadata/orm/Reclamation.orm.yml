@@ -1,0 +1,44 @@
+Reclamation:
+    type: entity
+    table: reclamation
+    indexes:
+        expediteur:
+            columns:
+                - expediteur
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        date:
+            type: date
+            nullable: false
+            comment: ''
+        sujet:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+        message:
+            type: string
+            nullable: false
+            length: 600
+            fixed: false
+            comment: ''
+    manyToOne:
+        expediteur:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                expediteur:
+                    referencedColumnName: pseudo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

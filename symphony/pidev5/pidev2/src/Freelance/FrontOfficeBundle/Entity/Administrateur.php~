@@ -1,0 +1,28 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Administrateur
+ *
+ * @ORM\Table(name="administrateur")
+ * @ORM\Entity
+ */
+class Administrateur
+{
+    /**
+     * @var \Membre
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_a", referencedColumnName="id")
+     * })
+     */
+    private $idA;
+
+
+}

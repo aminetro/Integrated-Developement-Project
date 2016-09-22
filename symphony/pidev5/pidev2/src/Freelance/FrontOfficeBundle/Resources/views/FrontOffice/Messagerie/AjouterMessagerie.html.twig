@@ -1,0 +1,22 @@
+<h1> Ajout Reclamation</h1>
+  
+  <form method="POST">
+      <table>
+          <tr>
+              <td>{{form_label(form.recepteur)}}   </td>
+              <td>{{ form_widget(form.recepteur)}}</td>
+          </tr> 
+          <tr>
+              <td>{{form_label(form.sujet)}}</td>
+              <td>{{ form_widget(form.sujet) }}</td>
+          </tr> 
+           <tr>
+              <td>{{form_label(form.message)}}</td>
+              <td>{{ form_widget(form.message) }}</td>
+          </tr> 
+          
+          
+      </table>
+ 
+     {{ form_rest(form)}}
+  </form>

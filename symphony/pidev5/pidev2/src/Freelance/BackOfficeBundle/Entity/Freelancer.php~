@@ -1,0 +1,73 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Freelancer
+ *
+ * @ORM\Table(name="freelancer")
+ * @ORM\Entity
+ */
+class Freelancer
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="disponibilite_f", type="string", length=50, nullable=false)
+     */
+    private $disponibiliteF = '';
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_f", referencedColumnName="id")
+     * })
+     */
+    private $idF;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Projet", inversedBy="idF")
+     * @ORM\JoinTable(name="favoris",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_f", referencedColumnName="id_f")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_p", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $idP;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Test", inversedBy="idF")
+     * @ORM\JoinTable(name="notetest",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_f", referencedColumnName="id_f")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="nom_test", referencedColumnName="nom")
+     *   }
+     * )
+     */
+    private $nomTest;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idP = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->nomTest = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

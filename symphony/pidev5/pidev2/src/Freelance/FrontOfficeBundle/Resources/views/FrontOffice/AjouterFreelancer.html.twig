@@ -1,0 +1,36 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %}  
+<div class="container">
+
+					<div class="row">
+<div class="span6">
+
+    <div class="alert alert-success hidden" id="contactSuccess">
+        <strong>Success!</strong> Your message has been sent to us.
+    </div>
+
+    <div class="alert alert-error hidden" id="contactError">
+        <strong>Error!</strong> There was an error sending your message.
+    </div>
+
+    <h2 class="short"><strong>Inscription Freelancer </strong></h2>
+    <form  id="contactForm" method="post">
+        <div class="row controls">
+            <div class="span3 control-group">
+
+         {{form(form)}}
+
+
+                <div class="btn-toolbar">
+                    <input type="submit" value="S'inscrire" class="btn btn-primary btn-large" data-loading-text="Loading...">
+
+                </div>
+            </div>
+        </div>             
+   {{ form_rest(form)}}
+    </form>
+</div> </div></div>
+
+ {% endblock %} 
+

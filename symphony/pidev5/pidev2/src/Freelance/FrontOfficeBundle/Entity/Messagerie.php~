@@ -1,0 +1,66 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Messagerie
+ *
+ * @ORM\Table(name="messagerie", indexes={@ORM\Index(name="expediteur", columns={"expediteur"}), @ORM\Index(name="recepteur", columns={"recepteur"})})
+ * @ORM\Entity
+ */
+class Messagerie
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sujet", type="string", length=100, nullable=false)
+     */
+    private $sujet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="string", length=600, nullable=false)
+     */
+    private $message;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="expediteur", referencedColumnName="pseudo")
+     * })
+     */
+    private $expediteur;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="recepteur", referencedColumnName="pseudo")
+     * })
+     */
+    private $recepteur;
+
+
+}

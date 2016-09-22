@@ -1,0 +1,11 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+{% block titre %}Modification Des Tests{% endblock %}
+
+
+{%block content%}
+<form method="POST" action="{{ path('freelance_front_office_ModifierTest', { 'id': test.id }) }}">
+   
+{{ form_widget(form) }}
+</form>
+{% endblock %}

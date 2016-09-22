@@ -1,0 +1,24 @@
+Jobowner:
+    type: entity
+    table: jobowner
+    id: {  }
+    fields:
+        societeJ:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: ''
+            column: societe_j
+    oneToOne:
+        idJ:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_j:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

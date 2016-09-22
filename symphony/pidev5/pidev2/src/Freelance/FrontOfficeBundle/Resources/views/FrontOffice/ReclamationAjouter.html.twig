@@ -1,0 +1,26 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+  <h1> Envoyer Reclamation</h1>
+  <center>
+  <form method="POST">
+      <table>
+            
+          <tr>
+              <td>{{form_label(form.sujet)}}</td>
+              <td>{{ form_widget(form.sujet) }}</td>
+          </tr> 
+           <tr>
+              <td>{{form_label(form.message)}}</td>
+              <td>{{ form_widget(form.message) }}</td>
+          </tr> 
+          
+          
+      </table>
+ <div class="btn-toolbar">
+                    <input type="submit" value="Envoyer Reclamation" class="btn btn-primary btn-large" data-loading-text="Loading...">
+
+                </div>
+     {{ form_rest(form)}}
+  </form>  </center>
+  {% endblock %}

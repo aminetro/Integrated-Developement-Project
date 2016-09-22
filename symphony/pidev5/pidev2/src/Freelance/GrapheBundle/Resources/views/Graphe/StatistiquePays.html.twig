@@ -1,0 +1,36 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+{% block StatPays %}
+<div class="row">
+						<div class="span6">
+
+							<div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"animation":"slide", "animationLoop": true, "maxVisibleItems": 1}'>
+								<ul class="slides">
+									<li>
+										{{ render(controller("FreelanceGrapheBundle:Graphe:chartPiePays")) }}
+									</li>
+									
+								</ul>
+							</div>
+
+							
+		
+						</div>
+                                            <div class="span6">
+
+							<div class="flexslider flexslider-center-mobile flexslider-simple" data-plugin-options='{"animation":"slide", "animationLoop": true, "maxVisibleItems": 1}'>
+								<ul class="slides">
+									<li>
+										{{ render(controller("FreelanceGrapheBundle:Graphe:ChartHistogrammePays")) }}
+									</li>
+									
+								</ul>
+							</div>
+
+							
+		
+						</div>
+
+						
+					</div>
+{% endblock %}

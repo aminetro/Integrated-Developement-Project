@@ -1,0 +1,30 @@
+security:
+    access_denied_url: /403
+    encoders:
+        FOS\UserBundle\Model\UserInterface: plaintext
+    role_hierarchy:
+        ROLE_USER: [ROLE_USER]
+        ROLE_FREELANCER: [ROLE_USER, ROLE_FREELANCER]
+        ROLE_JOBOWNER: [ROLE_USER, ROLE_JOBOWNER]
+        ROLE_ADMIN: [ROLE_USER, ROLE_JOBOWNER,ROLE_FREELANCER,ROLE_ADMIN]
+        ROLE_SUPERADMIN: [ROLE_USER, ROLE_JOBOWNER,ROLE_FREELANCER,ROLE_ADMIN,ROLE_SUPERADMIN]
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+    firewalls:   
+        main:
+            pattern: ^/
+            form_login:
+                success_handler: redirect.after.login     
+            logout:
+                success_handler: redirect.after.logout
+            anonymous: true
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Freelance/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/Freelancer/, role: ROLE_FREELANCER }
+        - { path: ^/Jobowner/, role: ROLE_JOBOWNER }
+        - { path: ^/Admin/, role: ROLE_ADMIN }
+        - { path: ^/SuperAdmin/, role: ROLE_SUPERADMIN }

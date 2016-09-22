@@ -1,0 +1,35 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Jobowner
+ *
+ * @ORM\Table(name="jobowner")
+ * @ORM\Entity
+ */
+class Jobowner
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="societe_j", type="string", length=100, nullable=false)
+     */
+    private $societeJ = '';
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_j", referencedColumnName="id")
+     * })
+     */
+    private $idJ;
+
+
+}

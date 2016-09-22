@@ -1,0 +1,36 @@
+
+
+
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+   
+    <th> nom </th>
+    <th> Prenom </th>
+    <th> Pays </th>
+    <th> Ville </th>
+    <th> Pseudo </th>
+    <th> Mail </th>
+    <th> Société </th>
+    <th> Supprimer </th>
+
+  
+</thead>
+
+{% for j in jobowner %}
+<tr>
+
+    <td>{{j.nom}}</td>
+    <td>{{j.prenom }}</td>
+    <td>{{j.pays }}</td>
+    <td>{{j.ville }}</td>
+    <td>{{j.pseudo }}</td>
+    <td>{{j.email }}</td>
+    <td>{{j.societe_j }}</td>
+    <td><button type="button" class="btn btn-xs btn-default"><a href="{{ path('freelance_Back_deleteJobowner',{id:j.id})}}">Supprimer</a></button> </td>
+
+
+    
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,51 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Liste des Jobowners</h1>
+<div clas="control-group">
+<form action="" method="POST">
+ <input type="text" class="input-medium search-query"  placeholder="Rechercher Par Pseudo"size="35" name="search"/>
+    <input type="submit" class="btn btn-primary" value="Recherche">
+</form>
+</div>
+<table class="table table-bordered">
+    <thead>
+   
+    <th> nom </th>
+    <th> Prenom </th>
+    <th> Pays </th>
+    <th> Ville </th>
+    <th> Pseudo </th>
+    
+    <th> Mail </th>
+      <th> Photo </th>
+    <th> Nom DE LA SOCIETE  </th>
+ 
+   
+  
+</thead>
+
+{% for m in jobowners %}
+<tr>
+
+    <td>{{m.nom}}</td>
+    <td>{{m.prenom }}</td>
+    <td>{{m.pays }}</td>
+    <td>{{m.ville }}</td>
+    <td>{{m.pseudo }}</td>
+
+    <td>{{m.email }}</td>
+   <td> <img  class="img-circle" data-src="{{asset('holder.js/140x140')}}" alt="100x100" style="width: 100px; height: 100px;" src="{{ asset(path('freelance_front_office_AfficherPhotoJobowner', {'pseudo': m.pseudo})) }}"/> 
+</td>
+    <td>{{m.societe_j }}</td>
+    <td>
+								<a href="{{ asset(path('freelance_front_FreelancerMessagerieAjouter', {'pseudo':app.user.pseudo ,'pseudo1':m.pseudo })) }}">Envoyer Un Message</a>
+							</td>
+
+   
+
+
+</tr>
+{% endfor %}
+</table>
+ {% endblock %}

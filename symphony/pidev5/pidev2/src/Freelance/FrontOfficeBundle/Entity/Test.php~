@@ -1,0 +1,116 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Test
+ *
+ * @ORM\Table(name="test", indexes={@ORM\Index(name="nom", columns={"nom"})})
+ * @ORM\Entity
+ */
+class Test
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=20, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question1", type="string", length=100, nullable=false)
+     */
+    private $question1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse1", type="string", length=3, nullable=false)
+     */
+    private $reponse1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question2", type="string", length=100, nullable=false)
+     */
+    private $question2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse2", type="string", length=3, nullable=false)
+     */
+    private $reponse2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question3", type="string", length=100, nullable=false)
+     */
+    private $question3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse3", type="string", length=3, nullable=false)
+     */
+    private $reponse3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question4", type="string", length=100, nullable=false)
+     */
+    private $question4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse4", type="string", length=3, nullable=false)
+     */
+    private $reponse4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question5", type="string", length=100, nullable=false)
+     */
+    private $question5;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse5", type="string", length=3, nullable=false)
+     */
+    private $reponse5;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question6", type="string", length=100, nullable=false)
+     */
+    private $question6;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse6", type="string", length=3, nullable=false)
+     */
+    private $reponse6;
+
+
+}

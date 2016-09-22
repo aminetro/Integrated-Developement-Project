@@ -1,0 +1,46 @@
+freelance_back_office:
+    resource: "@FreelanceBackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /Admin
+
+freelance_swift_mail:
+    resource: "@FreelanceSwiftMailBundle/Resources/config/routing.yml"
+    prefix:   /Freelance
+
+freelance_google_map:
+    resource: "@FreelanceGoogleMapBundle/Resources/config/routing.yml"
+    prefix:   /Freelance
+
+freelance_graphe:
+    resource: "@FreelanceGrapheBundle/Resources/config/routing.yml"
+    prefix:   /Freelance
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+freelance_front_office:
+    resource: "@FreelanceFrontOfficeBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+freelance_Back_office:
+    resource: "@FreelanceBackOfficeBundle/Resources/config/routing.yml"
+    prefix:   /Admin
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

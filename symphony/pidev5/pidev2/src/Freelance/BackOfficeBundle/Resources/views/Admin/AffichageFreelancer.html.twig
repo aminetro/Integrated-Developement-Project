@@ -1,0 +1,40 @@
+
+
+
+
+<table class="table table-bordered">
+    <thead>
+   
+    <th> nom </th>
+    <th> Prenom </th>
+    <th> Pays </th>
+    <th> Ville </th>
+    <th> Pseudo </th>
+    <th> Mail </th>
+    <th> Supprimer </th>
+
+
+
+
+
+{% for m in membre %}
+<thead>
+
+<td>{{m.nom}}</td>
+<td>{{m.prenom }}</td>
+<td>{{m.pays }}</td>
+<td>{{m.ville }}</td>
+<td>{{m.pseudo }}</td>
+
+<td>{{m.email }}</td>
+
+
+<td><button type="button" class="btn btn-xs btn-default"><a href="{{ path('freelance_Back_deletefreelancer',{id:m.id})}}">Supprimer</a></button> </td>
+   
+   </thead>
+
+
+     {% endfor %}
+   </table>
+ 
+  

@@ -1,0 +1,94 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Projet
+ *
+ * @ORM\Table(name="projet", indexes={@ORM\Index(name="owner_p", columns={"owner_p", "pseudo_f"}), @ORM\Index(name="pseudo_f", columns={"pseudo_f"}), @ORM\Index(name="IDX_50159CA9E61C9C8F", columns={"owner_p"})})
+ * @ORM\Entity
+ */
+class Projet
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre_p", type="string", length=100, nullable=false)
+     */
+    private $titreP;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie_p", type="string", length=200, nullable=false)
+     */
+    private $categorieP;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duree_p", type="string", length=60, nullable=false)
+     */
+    private $dureeP;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description_p", type="string", length=500, nullable=false)
+     */
+    private $descriptionP;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_p", type="blob", nullable=true)
+     */
+    private $photoP;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="owner_p", referencedColumnName="pseudo")
+     * })
+     */
+    private $ownerP;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pseudo_f", referencedColumnName="pseudo")
+     * })
+     */
+    private $pseudoF;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Freelancer", mappedBy="idP")
+     */
+    private $idF;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idF = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

@@ -1,0 +1,80 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+
+{%block content%}
+
+<h1>Affichage D'un Test</h1>
+
+
+    <table  class="table table-striped">
+        <tbody>
+
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+            <tr>
+                <th>Question1</th>
+                <td>{{ entity.question1 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse1</th>
+                <td>{{ entity.reponse1 }}</td>
+            </tr>
+            <tr>
+                <th>Question2</th>
+                <td>{{ entity.question2 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse2</th>
+                <td>{{ entity.reponse2 }}</td>
+            </tr>
+            <tr>
+                <th>Question3</th>
+                <td>{{ entity.question3 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse3</th>
+                <td>{{ entity.reponse3 }}</td>
+            </tr>
+            <tr>
+                <th>Question4</th>
+                <td>{{ entity.question4 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse4</th>
+                <td>{{ entity.reponse4 }}</td>
+            </tr>
+            <tr>
+                <th>Question5</th>
+                <td>{{ entity.question5 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse5</th>
+                <td>{{ entity.reponse5 }}</td>
+            </tr>
+            <tr>
+                <th>Question6</th>
+                <td>{{ entity.question6 }}</td>
+            </tr>
+            <tr>
+                <th>Reponse6</th>
+                <td>{{ entity.reponse6 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('freelance_front_office_AffichertoutTest') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('freelance_front_office_ModifierTest', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+ 
+</ul>
+{% endblock %}

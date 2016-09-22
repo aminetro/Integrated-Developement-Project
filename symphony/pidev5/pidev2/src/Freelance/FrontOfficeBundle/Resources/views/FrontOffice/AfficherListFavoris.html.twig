@@ -1,0 +1,40 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Liste des projets</h1>
+<form action=""  method="POST">
+    Recherche par titre du film:  <input type="text" class="required"  size="35" name="search"/>
+    <input type="submit" class="button" value="Recherche">
+</form>
+<table class="table table-bordered">
+    <thead>
+       
+        <th> Titre </th>
+        <th> Categorie </th>
+        <th> Duree </th>
+        <th> Description </th>
+        <th> Nom JOB Owner </th>
+        <th> Nom Freelancer</th>
+        <th> Candidater </th>
+        <th> défavoriser </th>
+ </thead>
+
+{% for p in projet %}
+    <tr>
+       
+        <td>{{p.titre_p}}</td>
+        <td>{{p.categorie_p }}</td>
+        <td>{{p.duree_p }}</td>
+        <td>{{p.description_p }}</td>
+        <td>{{p.owner_p }}</td>
+        <td>{{p.pseudo_f }}</td>
+      
+ <td><a href="{{path('freelance_front_office_AjouterCandidature',{pseudo:membre.pseudo,id:p.id} )}}">Envoyer  Candidature</a></td>
+  <td><a href="{{path('freelance_front_SupprimerFavoris',{idf:app.user.id,idp:p.id} )}}">Défavoris</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+ {% endblock %}
+
+ 

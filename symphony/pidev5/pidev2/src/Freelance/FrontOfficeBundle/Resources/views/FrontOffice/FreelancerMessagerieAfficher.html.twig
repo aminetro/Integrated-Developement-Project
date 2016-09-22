@@ -1,0 +1,33 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1>Mes Messages </h1>
+<form action="" class="content-form" method="POST">
+</form>
+<table class="table table-striped">
+    <thead>
+   
+    <th> Expediteur </th>
+    <th> Date </th>
+    <th> Sujet </th>
+    <th> Message </th>
+    <th> Repondre </th>
+    
+
+
+{% for m in messages %}
+<thead>
+
+    <td>{{m.expediteur}}</td>
+    <td>{{m.date }}</td>
+    <td>{{m.sujet }}</td>
+    <td>{{m.message }}</td>
+    <td><a href="{{path('freelance_front_FreelancerMessagerieAjouter',{pseudo:app.user.username,pseudo1:m.expediteur} )}}">Envoyer</a></td>
+  <td><a href="{{path('freelance_front_FreelancerMessagerieSupprimer',{id:m.id} )}}">Envoyer</a></td>
+
+   </thead>
+
+
+     {% endfor %}
+   </table>
+ {% endblock %}

@@ -1,0 +1,30 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Cv Du Freelancer</h1>
+
+<table class="table table-striped">
+    <thead>
+       
+         <th> Experience </th>
+          <th> Langue </th>
+            <th> Certification </th>
+              <th> Formation </th>
+               <th> Dernier mis ajour </th>
+               
+     </thead>
+
+{% for c in cv %}
+    <tr>
+
+<td>{{c.experience_cv}}</td>
+<td>{{c.langueCv }}</td>
+<td>{{c.certificationCv }}</td>
+<td>{{c.formationCv }}</td>
+<td>{{c.dernierMajCv|date('Y-m-d') }}</td>
+
+
+{% endfor %}
+</table>
+
+ {% endblock %}

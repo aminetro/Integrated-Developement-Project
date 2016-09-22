@@ -1,0 +1,32 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Liste des équipes</h1>
+
+<table class="table table-bordered">
+    <thead>
+
+        <th> pseufreelancer </th>
+        <th> estimation </th>
+        <th> lettre_mot </th>
+        <th> question </th>
+        <th> Accepter  Candidature </th>
+
+    </thead>
+
+{% for c in ca %}
+    <tr>
+
+        <td>{{c.pseufreelancer}}</td>
+        <td>{{c.estimation }}</td>
+        <td>{{c.lettre_mot }}</td>
+        <td>{{c.question }}</td>
+              
+
+        <td><a href="{{path('freelance_front_office_AffecterCandidature',{pseudo:c.pseufreelancer,id:c.id_p} )}}">Accepter  Candidature</a></td>
+ 
+    </tr>
+{% endfor %}
+</table>
+
+ {% endblock %}

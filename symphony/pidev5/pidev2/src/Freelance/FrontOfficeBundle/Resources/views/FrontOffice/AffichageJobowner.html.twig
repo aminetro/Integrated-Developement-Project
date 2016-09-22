@@ -1,0 +1,42 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Profil Jobowner</h1>
+
+<table class="table table-striped">
+    <thead>
+   
+    <th> nom </th>
+    <th> Prenom </th>
+    <th> Pays </th>
+    <th> Ville </th>
+   
+    
+    <th> Pseudo </th>
+   
+    <th>Mail</th>
+ 
+  <th> Photo </th>
+  
+</thead>
+
+
+<tr>
+
+    <td>{{app.user.nom}}</td>
+    <td>{{app.user.prenom }}</td>
+    <td>{{app.user.pays }}</td>
+    <td>{{app.user.ville }}</td>
+    <td>{{app.user.pseudo }}</td>
+
+    <td>{{app.user.email }}</td>
+
+ <td> <img  class="img-circle" data-src="{{asset('holder.js/140x140')}}" alt="100x100" style="width: 100px; height: 100px;" src="{{ asset(path('freelance_front_office_AfficherPhotoJobowner', {'pseudo': app.user.pseudo})) }}"/> 
+</td>
+
+
+
+</tr>
+
+</table>
+ {% endblock %}

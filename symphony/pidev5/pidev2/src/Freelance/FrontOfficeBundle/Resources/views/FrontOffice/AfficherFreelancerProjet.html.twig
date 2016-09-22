@@ -1,0 +1,34 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Mes Projets</h1>
+
+<table class="table table-bordered">
+    <thead>
+
+        <th> Titre </th>
+        <th> Categorie </th>
+        <th> Duree </th>
+        <th> Description </th>
+        <th> Nom JOB Owner </th>
+        <th> Nom Freelancer</th>
+       
+
+
+    </thead>
+{% for p in projet %}
+    <tr>
+
+        <td>{{p.titre_p}}</td>
+        <td>{{p.categorie_p }}</td>
+        <td>{{p.duree_p }}</td>
+        <td>{{p.description_p }}</td>
+        <td>{{p.owner_p }}</td>
+        <td>{{p.pseudo_f }}</td>
+        
+
+    </tr>
+{% endfor %}
+</table>
+
+ {% endblock %}

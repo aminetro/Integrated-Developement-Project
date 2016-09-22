@@ -1,0 +1,59 @@
+Cvfreelancer:
+    type: entity
+    table: cvfreelancer
+    id: {  }
+    fields:
+        dernierMajCv:
+            type: date
+            nullable: true
+            comment: ''
+            column: dernier_maj_cv
+        experienceCv:
+            type: string
+            nullable: true
+            length: 500
+            fixed: false
+            comment: ''
+            default: ''
+            column: experience_cv
+        langueCv:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            default: ''
+            column: langue_cv
+        certificationCv:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            default: ''
+            column: certification_cv
+        formationCv:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: formation_cv
+        photoCv:
+            type: blob
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: photo_cv
+    oneToOne:
+        idCv:
+            targetEntity: Freelancer
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_cv:
+                    referencedColumnName: id_f
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

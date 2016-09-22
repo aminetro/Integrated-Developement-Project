@@ -1,0 +1,66 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Candidature
+ *
+ * @ORM\Table(name="candidature", indexes={@ORM\Index(name="pseufreelancer", columns={"pseufreelancer"}), @ORM\Index(name="id_p", columns={"id_p"})})
+ * @ORM\Entity
+ */
+class Candidature
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="estimation", type="string", length=50, nullable=false)
+     */
+    private $estimation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lettre_mot", type="string", length=500, nullable=false)
+     */
+    private $lettreMot;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question", type="string", length=500, nullable=false)
+     */
+    private $question;
+
+    /**
+     * @var \Membre
+     *
+     * @ORM\ManyToOne(targetEntity="Membre")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pseufreelancer", referencedColumnName="pseudo")
+     * })
+     */
+    private $pseufreelancer;
+
+    /**
+     * @var \Projet
+     *
+     * @ORM\ManyToOne(targetEntity="Projet")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_p", referencedColumnName="id")
+     * })
+     */
+    private $idP;
+
+
+}

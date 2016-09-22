@@ -1,0 +1,27 @@
+<h1> Liste des messageries </h1>
+
+<table border=1>
+    <tr>
+       
+         <th> Id </th>
+          <th> Expediteur </th>
+          <th> Recepteur </th>
+            <th> Date </th>
+              <th> Sujet </th>
+               <th> Message </th>
+              
+                <th> Supprimer </th>
+    </tr>
+
+{% for m in entities %}
+    <tr>
+
+<td> {{m.id}}         </td>
+<td> {{m.expediteur}} </td>
+<td> {{m.recepteur}} </td>
+<td> {{ m.date|date('Y-m-d') }} </td>
+<td> {{m.sujet }}  </td>
+<td> {{m.message}} </td>
+<td> <a href="{{path('freelance_front_SupprimerMessage', {id:m.id} )}}"> supprimer</a> </td>  
+</tr>
+{% endfor %}

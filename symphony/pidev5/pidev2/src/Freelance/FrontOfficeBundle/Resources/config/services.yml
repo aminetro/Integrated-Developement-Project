@@ -1,0 +1,9 @@
+services:
+  # [...] Vos autres services
+  redirect.after.login:
+    class: Freelance\FrontOfficeBundle\Redirection\AfterLoginRedirection
+    arguments: [@router]
+ 
+  redirect.after.logout:
+    class: Freelance\FrontOfficeBundle\Redirection\AfterLogoutRedirection
+    arguments: [@router, @security.context]

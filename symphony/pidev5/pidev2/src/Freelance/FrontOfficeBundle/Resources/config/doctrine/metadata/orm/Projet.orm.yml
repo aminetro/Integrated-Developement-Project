@@ -1,0 +1,87 @@
+Projet:
+    type: entity
+    table: projet
+    indexes:
+        owner_p:
+            columns:
+                - owner_p
+                - pseudo_f
+        pseudo_f:
+            columns:
+                - pseudo_f
+        IDX_50159CA9E61C9C8F:
+            columns:
+                - owner_p
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        titreP:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            column: titre_p
+        categorieP:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+            column: categorie_p
+        dureeP:
+            type: string
+            nullable: false
+            length: 60
+            fixed: false
+            comment: ''
+            column: duree_p
+        descriptionP:
+            type: string
+            nullable: false
+            length: 500
+            fixed: false
+            comment: ''
+            column: description_p
+        photoP:
+            type: blob
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: photo_p
+    manyToOne:
+        ownerP:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                owner_p:
+                    referencedColumnName: pseudo
+            orphanRemoval: false
+        pseudoF:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                pseudo_f:
+                    referencedColumnName: pseudo
+            orphanRemoval: false
+    manyToMany:
+        idF:
+            targetEntity: Freelancer
+            cascade: {  }
+            mappedBy: idP
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

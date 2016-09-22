@@ -1,0 +1,70 @@
+<?php
+
+namespace Freelance\FrontOfficeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Cvfreelancer
+ *
+ * @ORM\Table(name="cvfreelancer")
+ * @ORM\Entity
+ */
+class Cvfreelancer
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dernier_maj_cv", type="date", nullable=true)
+     */
+    private $dernierMajCv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="experience_cv", type="string", length=500, nullable=true)
+     */
+    private $experienceCv = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="langue_cv", type="string", length=100, nullable=true)
+     */
+    private $langueCv = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="certification_cv", type="string", length=200, nullable=true)
+     */
+    private $certificationCv = '';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="formation_cv", type="string", length=200, nullable=true)
+     */
+    private $formationCv;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_cv", type="blob", nullable=true)
+     */
+    private $photoCv;
+
+    /**
+     * @var \Freelancer
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Freelancer")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_cv", referencedColumnName="id_f")
+     * })
+     */
+    private $idCv;
+
+
+}

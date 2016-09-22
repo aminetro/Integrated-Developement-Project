@@ -1,0 +1,34 @@
+freelance_graphe_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FreelanceGrapheBundle:Default:index }
+freelance_graphe_grapheChartLinePays:
+    path:     /chartLinePays
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartLinePays }
+    
+freelance_graphe_grapheHistogrammePays:
+    path:     /ChartHistogrammePays
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:ChartHistogrammePays }   
+    
+freelance_graphe_chartPiePays:
+    path:     /chartPiePays
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartPiePays } 
+    
+freelance_graphe_grapheChartLineProjet:
+    path:     /chartLineProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartLineProjet }    
+    
+freelance_graphe_grapheHistogrammeProjet:
+    path:     /ChartHistogrammeProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:ChartHistogrammeProjet } 
+    
+freelance_graphe_chartPieProjet:
+    path:     /chartPieProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:chartPieProjet } 
+    
+freelance_graphe_StatistiquePays:
+    path:     /StatistiquePays
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:StatistiquePays }
+freelance_graphe_StatistiqueProjet:
+    path:     /StatistiqueProjet
+    defaults: { _controller: FreelanceGrapheBundle:Graphe:StatistiqueProjet }
+    

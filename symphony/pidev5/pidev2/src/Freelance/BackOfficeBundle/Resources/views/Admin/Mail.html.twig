@@ -1,0 +1,27 @@
+{# empty Twig template #}
+
+<html>
+    <head>
+        <title>
+            Formulaire Mail
+        </title>
+    </head>
+    
+    <body>
+        <form action="{{path('freelance_Back_mail')}}" method="POST">
+            <h1>Subject</h1>
+        <input type="text" name="Subject"/>
+                    <h1>email</h1>
+
+        <input type="text" name="email"/>
+                    <h1>Message</h1>
+
+        <textarea name="message"></textarea>
+        
+        <input type="submit" name="Subject"/>
+        
+        </form>
+    </body>
+    
+    
+</html>

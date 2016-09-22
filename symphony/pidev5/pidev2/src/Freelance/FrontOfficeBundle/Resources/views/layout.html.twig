@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Elusive - Freelance</title>
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="Crivos.com">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Libs CSS -->
+		<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+		<link rel="stylesheet" href="{{asset('css/fonts/font-awesome/css/font-awesome.css')}}">
+		<link rel="stylesheet" href="{{asset('vendor/flexslider/flexslider.css')}}" media="screen" />
+		<link rel="stylesheet" href="{{asset('vendor/fancybox/jquery.fancybox.css')}}" media="screen" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{{asset('css/theme.css')}}">
+		<link rel="stylesheet" href="{{asset('css/theme-elements.css')}}">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+		<!-- Skin -->
+		<link rel="stylesheet" href="{{asset('css/skins/blue.css')}}">
+
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{{asset('css/bootstrap-responsive.css')}}" />
+		<link rel="stylesheet" href="{{asset('css/theme-responsive.css')}}" />
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+		<link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{asset('img/apple-touch-icon-72x72.png')}}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{asset('img/apple-touch-icon-114x114.png')}}">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{asset('img/apple-touch-icon-144x144.png')}}">
+
+		<!-- Head Libs -->
+		<script src="{{asset('vendor/modernizr.js')}}"></script>
+
+		<!--[if IE]>
+			<link rel="stylesheet" href="css/ie.css">
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->
+
+		<!-- Facebook OpenGraph Tags - Go to http://developers.facebook.com/ for more information.
+		<meta property="og:title" content="Porto Website Template."/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.crivos.com/themes/porto"/>
+		<meta property="og:image" content="http://www.crivos.com/themes/porto/"/>
+		<meta property="og:site_name" content="Porto"/>
+		<meta property="fb:app_id" content=""/>
+		<meta property="og:description" content="Porto - Responsive HTML5 Template"/>
+		-->
+
+	</head>
+	<body>
+
+		
+			<header>
+                            <div class="body">
+                                {% trans_default_domain 'FOSUserBundle' %}
+                     <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+               {{ 'vous êtes connecté en tant que '|trans }}: {{ app.user.username }}
+                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-large disabled">
+                    {{ 'Se Deconnecter'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}" class="btn btn-large disabled">{{ 'Se Connecter'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+		{% if is_granted('ROLE_FREELANCER') %}
+                <div class="container">
+					<h1 class="logo">
+						<a href="{{asset('index.html')}}">
+							<img alt="Porto" src="{{asset('img/logo.png')}}">
+						</a>
+					</h1>
+					
+					
+					<div class="social-icons">
+						<ul class="social-icons">
+							<li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+							<li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+							<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+						</ul>
+					</div>
+					<nav>
+						<ul class="nav nav-pills nav-main" id="mainMenu">
+                                                                     <li>
+                                <a href="{{path('freelance_front_office_AcceuilFreelance')}}">Home</a>
+                            </li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="index.html">
+									Projet
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                    
+									<li><a href="{{path('freelance_front_office_AfficherListFavoris',{pseudo:app.user.username} )}}">Liste Des Favoris</a></li>
+									<li><a href="{{path('freelance_front_RechercherProjetFreelancer',{pseudo:app.user.username} )}}"><td>Liste Des Projets</a></li>
+                                                                        <li><a href="{{path('freelance_front_office_AfficherMesCandidature',{pseudo:app.user.username} )}}">Mes Candidatures</a></li>
+                                                                        <li><a href="{{path('freelance_front_office_AfficherFreelancerProjet', {pseudo:app.user.username} )}}">Mes Projets</a></li>
+                                                                </ul>
+							</li>
+							
+                                                        <li class="dropdown">
+								<a class="dropdown-toggle" href="index.html">
+									Mon Cv
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                    
+									<li><a href="{{path('freelance_front_office_AfficherCvFreelancer', {pseudo:app.user.username} )}}">afficher CV</a></li>
+									<li><td><a href="{{path('freelance_front_office_AjouterCvFreelancer', {pseudo:app.user.username} )}}">Ajouter CV</a></td></li>
+                                                                        <li><a href="{{path('freelance_front_office_ModifierCvFreelancer', {pseudo:app.user.username} )}}">Modifier CV</a></li>
+                                                                        
+                                                                </ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Statistique
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									
+									<li><a href="{{path('freelance_graphe_StatistiquePays')}}">Statistique par pays </a></li>
+									<li><a href="{{path('freelance_graphe_StatistiqueProjet')}}">Statistique par projet </a></li>
+									
+								</ul>
+							</li>
+                                                        <li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Profil
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                       <li><a href="{{path('freelance_front_office_ModifierFreelancer',{pseudo:app.user.username} )}}">Modifier Profil</a></li>
+                                                                     <li><a href="{{path('freelance_front_office_AjouterPhotoFreelancer', {pseudo:app.user.username} )}}">Ajouter Photo</a></li>
+                                                                        
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Rechercher Membre
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                        <li><a href="{{path('freelance_front_FreelancerRechercherJobowner' )}}">Rechercher Jobowner </a></li>
+								       <li><a href="{{path('freelance_front_FreelancerRechercherFreelancer' )}}">Rechercher Freelancer</a></li>
+								
+								</ul>
+							</li>
+							
+                                                         
+                                                         <li>
+								<a href="{{ asset(path('freelance_front_FreelancerMessagerieRechercher', {'pseudo': app.user.pseudo})) }}">Mes Messages</a>
+							</li>
+							<li>
+								<a href="{{path('freelance_front_CantactUs')}}">Contact Us</a>
+							</li>
+                                                        <li>
+								<a href="{{path('freelance_front_ReclamationAjouter',{pseudo:app.user.username,type:'free'})}}">Envoyer Reclamation</a>
+							</li>
+						</ul>   
+					</nav>
+				</div>
+                {% elseif is_granted('ROLE_JOBOWNER') %}
+                <div class="container">
+					<h1 class="logo">
+						<a href="{{asset('index.html')}}">
+							<img alt="Porto" src="{{asset('img/logo.png')}}">
+						</a>
+					</h1>
+					
+					
+					<div class="social-icons">
+						<ul class="social-icons">
+							<li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+							<li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+							<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+						</ul>
+					</div>
+					<nav>
+						<ul class="nav nav-pills nav-main" id="mainMenu">
+                                                                <li>
+                                <a href="{{path('freelance_front_office_AcceuilFreelance')}}">Home</a>
+                            </li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="index.html">
+									Projet
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                    
+									<li><a href="{{path('freelance_front_office_AjouterProjet', {pseudo:app.user.username} )}}">Ajouter Projet</a></li>
+									<li><a href="{{path('freelance_front_RechercherProjetJobowner')}}"><td>Liste Des Projets</a></li>
+                                                                        <li><a href="{{path('freelance_front_office_AfficherJobownerProjet', {pseudo:app.user.username} )}}">Mes Projet</a></li>
+                                                                         </ul>
+							</li>
+							 <li><a href="{{path('freelance_front_office_AfficherListCandidature',{pseudo:app.user.username} )}}">Candidatures</a></li>
+                                                         
+                                                      
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Statistique
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+									
+									<li><a href="{{path('freelance_graphe_StatistiquePays')}}">Statistique par pays </a></li>
+									<li><a href="{{path('freelance_graphe_StatistiqueProjet')}}">Statistique par projet </a></li>
+									
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Rechercher Membre
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                      <li><a href="{{path('freelance_front_JobownerRechercherJobowner' )}}">Rechercher Jobowner </a></li>
+								       <li><a href="{{path('freelance_front_JobownerRechercherFreelancer' )}}">Rechercher Freelancer</a></li>
+								
+								</ul>
+							</li>
+                                                        
+                                                        <li class="dropdown">
+								<a class="dropdown-toggle" href="#">
+									Profil
+									<i class="icon-angle-down"></i>
+								</a>
+								<ul class="dropdown-menu">
+                                                                       <li><a href="{{path('freelance_front_office_JobownerModifier',{id:app.user.id} )}}">Modifier Profil</a></li>
+                                                                     <li><a href="{{path('freelance_front_office_AjouterPhotoJobowner', {pseudo:app.user.username} )}}">Ajouter Photo</a></li>
+                                                                        
+								</ul>
+							</li>
+							 <li>
+								<a href="{{ asset(path('freelance_front_JobownerMessagerieRechercher', {'pseudo': app.user.pseudo})) }}">Mes Messages</a>
+							</li>
+							<li>
+								<a href="{{path('freelance_front_CantactUs')}}">Contact Us</a>
+							</li>
+                                                        <li>
+								<a href="{{path('freelance_front_ReclamationAjouter',{pseudo:app.user.username,type:'job'})}}">Envoyer Reclamation</a>
+							</li>
+						</ul>
+					</nav>
+				</div>               
+                {% else %}
+                <div class="container">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <img alt="Porto" src="{{asset('img/logo.png')}}">
+                        </a>
+                    </h1>
+                    
+                    <nav>
+              
+                    </nav>
+                    <div class="social-icons">
+                        <ul class="social-icons">
+                            <li class="facebook"><a href=" https://www.facebook.com/pages/Freelance/1579791178965084?ref=hl" target="_blank" title="Facebook">Facebook</a></li>
+                            <li class="twitter"><a href="https://twitter.com/free_elusive " target="_blank" title="Twitter">Twitter</a></li>
+                            <li class="linkedin"><a href="https://www.linkedin.com/profile/view?id=410900259&trk=nav_responsive_tab_profile_pic" target="_blank" title="Linkedin">Linkedin</a></li>
+                        </ul>
+                    </div>
+                    <nav>
+                        <ul class="nav nav-pills nav-main" id="mainMenu">
+                            <li>
+                                <a href="{{path('freelance_front_office_AcceuilFreelance')}}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{{path('freelance_front_office_AboutUs')}}">About Us</a>
+                            </li>
+                            
+                            <li>
+                                <a href="{{path('freelance_front_CantactUs')}}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                {% endif %}
+			</header>
+			
+                                                    {% block content %}	
+                                                    {% endblock %}
+            	
+{% block StatPays %}{% endblock %}
+					
+
+			
+
+                         <footer>
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribon">
+							<span>Get in Touch</span>
+						</div>
+						<div class="span3">
+							<h4>Newsletter</h4>
+							<p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+
+							<div class="alert alert-success hidden" id="newsletterSuccess">
+								<strong>Success!</strong> You've been added to our email list.
+							</div>
+
+							<div class="alert alert-error hidden" id="newsletterError"></div>
+
+							<form class="form-inline" id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+								<div class="control-group">
+									<div class="input-append">
+										<input class="span2" placeholder="Email Address" name="email" id="email" type="text">
+										<button class="btn" type="submit">Go!</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="span3">
+							<h4>Latest Tweet</h4>
+							<div id="tweet" class="twitter">
+								<p>Please wait...</p>
+							</div>
+						</div>
+						<div class="span4">
+							<div class="contact-details">
+								<h4>Get in touch</h4>
+								<ul class="contact">
+									<li><p><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</p></li>
+									<li><p><i class="icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</p></li>
+									<li><p><i class="icon-envelope"></i> <strong>Email:</strong> <a href="{{path('freelance_front_CantactUs')}}">elusive.di.elusive@gmail.com</a></p></li>
+								</ul>
+							</div>
+						</div>
+						<div class="span2">
+							<h4>Follow Us</h4>
+							<div class="social-icons">
+								<ul class="social-icons">
+                            <li class="facebook"><a href=" https://www.facebook.com/pages/Freelance/1579791178965084?ref=hl" target="_blank" title="Facebook">Facebook</a></li>
+                            <li class="twitter"><a href="https://twitter.com/free_elusive " target="_blank" title="Twitter">Twitter</a></li>
+                            <li class="linkedin"><a href="https://www.linkedin.com/profile/view?id=410900259&trk=nav_responsive_tab_profile_pic" target="_blank" title="Linkedin">Linkedin</a></li>
+                        </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="span1">
+								<a href="index.html" class="logo">
+									<img alt="Porto Website Template" src="{{asset('img/logo-footer.png')}}">
+								</a>
+							</div>
+							<div class="span7">
+								<p>© Copyright 2013 by Crivos. All Rights Reserved.</p>
+							</div>
+							<div class="span4">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="page-faq.html">FAQ's</a></li>
+										<li><a href="sitemap.html">Sitemap</a></li>
+										<li><a href="{{path('freelance_front_CantactUs')}}">Contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Libs -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{{asset('vendor/jquery.js')}}"><\/script>')</script>
+		<script src="{{asset('vendor/jquery.easing.js')}}"></script>
+		<script src="{{asset('vendor/jquery.cookie.js')}}"></script>
+		<!-- <script src="master/style-switcher/style.switcher.js"></script> -->
+		<script src="{{asset('vendor/bootstrap.js')}}"></script>
+		<script src="{{asset('vendor/selectnav.js')}}"></script>
+		<script src="{{asset('vendor/twitterjs/twitter.js')}}"></script>
+		<script src="{{asset('vendor/flexslider/jquery.flexslider.js')}}"></script>
+		<script src="{{asset('vendor/jflickrfeed/jflickrfeed.js')}}"></script>
+		<script src="{{asset('vendor/fancybox/jquery.fancybox.js')}}"></script>
+		<script src="{{asset('vendor/jquery.validate.js')}}"></script>
+
+		<script src="{{asset('js/plugins.js')}}"></script>
+
+		<!-- Page Scripts -->
+
+		<!-- Theme Initializer -->
+		<script src="{{asset('js/theme.js')}}"></script>
+
+		<!-- Custom JS -->
+		<script src="{{asset('js/custom.js')}}"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->
+	</body>
+</html>

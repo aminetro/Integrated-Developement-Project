@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>Portfolio - 2 Columns | Porto - Responsive HTML5 Template</title>
+		<meta name="keywords" content="HTML5 Template" />
+		<meta name="description" content="Porto - Responsive HTML5 Template">
+		<meta name="author" content="Crivos.com">
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+		<!-- Libs CSS -->
+		<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+		<link rel="stylesheet" href="{{asset('css/fonts/font-awesome/css/font-awesome.css')}}">
+		<link rel="stylesheet" href="{{asset('vendor/flexslider/flexslider.css')}}" media="screen" />
+		<link rel="stylesheet" href="{{asset('vendor/fancybox/jquery.fancybox.css')}}" media="screen" />
+		<link rel="stylesheet" href="{{asset('vendor/isotope/jquery.isotope.css')}}" media="screen" />
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{{asset('css/theme.css')}}">
+		<link rel="stylesheet" href="{{asset('css/theme-elements.css')}}">
+
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+
+		<!-- Skin -->
+		<link rel="stylesheet" href="{{asset('css/skins/blue.css')}}">
+
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="{{asset('css/bootstrap-responsive.css')}}" />
+		<link rel="stylesheet" href="{{asset('css/theme-responsive.css')}}" />
+
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+		<link rel="apple-touch-icon" href="{{asset('img/apple-touch-icon.png')}}">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{asset('img/apple-touch-icon-72x72.png')}}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{asset('img/apple-touch-icon-114x114.png')}}">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{asset('img/apple-touch-icon-144x144.png')}}">
+
+		<!-- Head Libs -->
+		<script src="{{asset('vendor/modernizr.js')}}"></script>
+
+		<!--[if IE]>
+			<link rel="stylesheet" href="css/ie.css">
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->
+
+		<!-- Facebook OpenGraph Tags - Go to http://developers.facebook.com/ for more information.
+		<meta property="og:title" content="Porto Website Template."/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://www.crivos.com/themes/porto"/>
+		<meta property="og:image" content="http://www.crivos.com/themes/porto/"/>
+		<meta property="og:site_name" content="Porto"/>
+		<meta property="fb:app_id" content=""/>
+		<meta property="og:description" content="Porto - Responsive HTML5 Template"/>
+		-->
+
+	</head>
+	<body>
+
+		<div class="body">
+			<header>
+				{% block menu %}
+                            {% endblock %}
+			</header>
+
+			
+			<div role="main" class="main">
+
+				<section class="page-top">
+					<div class="container">
+						<div class="row">
+							<div class="span12">
+								<ul class="breadcrumb">
+									<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+									<li class="active">Portfolio</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span12">
+								<h2>Single Project</h2>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div class="container">
+
+					<h2>Statistique</h2>
+
+					
+
+				{% block StatPays %}
+                                        {% endblock %}
+
+					
+
+				</div>
+
+			</div>
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribon">
+							<span>Get in Touch</span>
+						</div>
+						<div class="span3">
+							<h4>Newsletter</h4>
+							<p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+
+							<div class="alert alert-success hidden" id="newsletterSuccess">
+								<strong>Success!</strong> You've been added to our email list.
+							</div>
+
+							<div class="alert alert-error hidden" id="newsletterError"></div>
+
+							<form class="form-inline" id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+								<div class="control-group">
+									<div class="input-append">
+										<input class="span2" placeholder="Email Address" name="email" id="email" type="text">
+										<button class="btn" type="submit">Go!</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="span3">
+							<h4>Latest Tweet</h4>
+							<div id="tweet" class="twitter">
+								<p>Please wait...</p>
+							</div>
+						</div>
+						<div class="span4">
+							<div class="contact-details">
+								<h4>Get in touch</h4>
+								<ul class="contact">
+									<li><p><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</p></li>
+									<li><p><i class="icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</p></li>
+									<li><p><i class="icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></p></li>
+								</ul>
+							</div>
+						</div>
+						<div class="span2">
+							<h4>Follow Us</h4>
+							<div class="social-icons">
+								<ul class="social-icons">
+									<li class="facebook"><a href="http://www.facebook.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Facebook">Facebook</a></li>
+									<li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Twitter">Twitter</a></li>
+									<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" rel="tooltip" title="Linkedin">Linkedin</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="span1">
+								<a href="index.html" class="logo">
+									<img alt="Porto Website Template" src="{{asset('img/logo-footer.png')}}">
+								</a>
+							</div>
+							<div class="span7">
+								<p>© Copyright 2013 by Crivos. All Rights Reserved.</p>
+							</div>
+							<div class="span4">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="page-faq.html">FAQ's</a></li>
+										<li><a href="sitemap.html">Sitemap</a></li>
+										<li><a href="contact-us.html">Contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Libs -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="{{asset('vendor/jquery.js')}}"><\/script>')</script>
+		<script src="{{asset('vendor/jquery.easing.js')}}"></script>
+		<script src="{{asset('vendor/jquery.cookie.js')}}"></script>
+		<!-- <script src="master/style-switcher/style.switcher.js"></script> -->
+		<script src="{{asset('vendor/bootstrap.js')}}"></script>
+		<script src="{{asset('vendor/selectnav.js')}}"></script>
+		<script src="{{asset('vendor/twitterjs/twitter.js')}}"></script>
+		<script src="{{asset('vendor/flexslider/jquery.flexslider.js')}}"></script>
+		<script src="{{asset('vendor/jflickrfeed/jflickrfeed.js')}}"></script>
+		<script src="{{asset('vendor/fancybox/jquery.fancybox.js')}}"></script>
+		<script src="{{asset('vendor/jquery.validate.js')}}"></script>
+		<script src="{{asset('vendor/isotope/jquery.isotope.js')}}"></script>
+
+		<script src="{{asset('js/plugins.js')}}"></script>
+
+		<!-- Page Scripts -->
+
+		<!-- Theme Initializer -->
+		<script src="{{asset('js/theme.js')}}"></script>
+
+		<!-- Custom JS -->
+		<script src="{{asset('js/custom.js')}}"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+		<!--
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		-->
+	</body>
+</html>

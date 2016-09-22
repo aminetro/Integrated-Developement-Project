@@ -1,0 +1,34 @@
+
+
+<table  class="table table-striped">
+    <thead>
+   
+    <th> expediteur </th>
+    <th> date </th>
+    <th> sujet </th>
+    <th> message </th>
+     <th> Supprimer </th>
+      <th> répondre </th>
+    
+    
+    
+   
+  
+</thead>
+
+{% for r in reclamation %}
+<tr>
+
+    <td>{{r.expediteur}}</td>
+    <td>{{r.date }}</td>
+    <td>{{r.sujet }}</td>
+    <td>{{r.message }}</td>
+    <td><button type="button" class="btn btn-xs btn-default"><a href="{{ path('freelance_Back_deleteReclamation',{id:r.id})}}">Supprimer</a> </button></td>
+     <td><button type="button" class="btn btn-xs btn-default"><a href="{{ path('freelance_Back_RepondreRecAdmin')}}">Répondre</a> </button></td>
+   
+  
+
+</tr>
+{% endfor %}
+</table>
+ 

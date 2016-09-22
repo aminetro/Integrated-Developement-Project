@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: pidev
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: elusive.di.elusive@gmail.com
+    mailer_password: elusivedielusive
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt

@@ -1,0 +1,57 @@
+Freelancer:
+    type: entity
+    table: freelancer
+    id: {  }
+    fields:
+        disponibiliteF:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            default: ''
+            column: disponibilite_f
+    oneToOne:
+        idF:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_f:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        idP:
+            targetEntity: Projet
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idF
+            joinTable:
+                name: favoris
+                joinColumns:
+                    -
+                        name: id_f
+                        referencedColumnName: id_f
+                inverseJoinColumns:
+                    -
+                        name: id_p
+                        referencedColumnName: id
+            orderBy: null
+        nomTest:
+            targetEntity: Test
+            cascade: {  }
+            mappedBy: null
+            inversedBy: idF
+            joinTable:
+                name: notetest
+                joinColumns:
+                    -
+                        name: id_f
+                        referencedColumnName: id_f
+                inverseJoinColumns:
+                    -
+                        name: nom_test
+                        referencedColumnName: nom
+            orderBy: null
+    lifecycleCallbacks: {  }

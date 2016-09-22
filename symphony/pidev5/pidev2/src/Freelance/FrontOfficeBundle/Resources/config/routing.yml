@@ -1,0 +1,226 @@
+freelance_front_office_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Default:index }
+
+freelance_front_office_AfficherFreelancer:
+    path:     /Freelancer/AfficherFreelancer
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:AfficherListFreelancer }
+
+    
+freelance_front_office_AfficherJobowner:
+    path:     /Jobowner/AfficherJobowner
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:AfficherListJobowner }    
+    
+freelance_front_office_AjouterFreelancer:
+    path:     /Freelance/AjouterFreelancer
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:AjouterFreelancer }
+    
+freelance_front_office_ModifierFreelancer:
+    path:     /Freelancer/ModifierFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:ModifierFreelancer }
+    
+freelance_front_office_AfficherProfilFreelancer:
+    path:     /Freelancer/AfficherProfilFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:AfficherProfilFreelancer }
+    
+freelance_front_office_AjouterCvFreelancer:
+    path:     /Freelancer/AjouterCvFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Cvfreelancer:AjouterCvFreelancer }
+    
+freelance_front_office_AfficherCvFreelancer:
+    path:     /Freelancer/AfficherCvFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Cvfreelancer:AfficherCvFreelancer }  
+    
+freelance_front_office_ModifierCvFreelancer:
+    path:     /Freelancer/ModifierCvFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Cvfreelancer:ModifierCvFreelancer }  
+    
+freelance_front_office_AjouterProjet:
+    path:     /Jobowner/AjouterProjet/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:AjouterProjet } 
+    
+freelance_front_office_AfficherFreelancerProjet:
+    path:     /Freelancer/AfficherFreelancerProjet/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:AfficherFreelancerProjet } 
+    
+freelance_front_office_AfficherJobownerProjet:
+    path:     /Jobowner/AfficherJobownerProjet/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:AfficherJobownerProjet }     
+    
+
+freelance_front_office_AfficherListFavoris:
+    path:     /Freelancer/AfficherListFavoris/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Favoris:AfficherListFavoris } 
+    
+freelance_front_office_ModifierProjet:
+    path:     /Jobowner/ModifierProjet/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:ModifierProjet }
+    
+freelance_front_office_AjouterJobowner:
+    path:     /Freelance/AjouterJobowner
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:AjouterJobowner }
+    
+freelance_front_office_AjouterCandidature:
+    path:     /Freelancer/AjouterCandidature/{pseudo}/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:AjouterCandidature }
+    
+freelance_front_office_AfficherListCandidature:
+    path:     /Jobowner/AfficherListCandidature/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:AfficherListCandidature }
+    
+freelance_front_office_AfficherMesCandidature:
+    path:     /Freelancer/AfficherMesCandidature/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:AfficherMesCandidature }
+    
+freelance_front_office_AffecterCandidature:
+    path:     /Jobowner/AffecterCandidature/{pseudo}/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:AffecterCandidature }
+    
+freelance_front_office_ModifierCandidature:
+    path:     /Freelancer/ModifierCandidature/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:ModifierCandidature }
+
+freelance_front_office_AfficherImage:
+    pattern: /images/{id}
+    defaults: {_controller: FreelanceFrontOfficeBundle:Candidature:AfficherImage}
+freelance_front_office_AcceuilFreelance:
+    pattern: /Freelance/AcceuilFreelance
+    defaults: {_controller: FreelanceFrontOfficeBundle:Default:AcceuilFreelance}
+    
+freelance_front_FreelancerRechercherJobowner:
+    path:     /Freelance/FreelancerRechercherJobowner
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:FreelancerRechercherJobowner }  
+  
+    
+freelance_front_FreelancerRechercherFreelancer:
+    path:     /Freelance/FreelancerRechercherFreelancer
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:FreelancerRechercherFreelancer } 
+    
+freelance_front_JobownerRechercherFreelancer:
+    path:     /Freelance/JobownerRechercherFreelancer
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:JobownerRechercherFreelancer } 
+    
+freelance_front_JobownerRechercherJobowner:
+    path:     /Freelance/JobownerRechercherJobowner
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:JobownerRechercherJobowner }     
+    
+    
+freelance_front_RechercherProjetJobowner:
+    path:     /Jobowner/RechercherProjetJobowner/
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:RechercherProjetJobowner }   
+    
+freelance_front_RechercherProjetFreelancer:
+    path:     /Freelancer/RechercherProjetFreelancer/
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:RechercherProjetFreelancer }   
+    
+freelance_front_office_AjouterPhotoFreelancer:
+    path:     /Freelancer/AjouterPhotoFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:AjouterPhotoFreelancer }   
+    
+
+    
+freelance_front_office_AjouterPhotoJobowner:
+    path:     /Jobowner/AjouterPhotoJobowner/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:AjouterPhotoJobowner }
+freelance_front_AjouterFavoris :
+    path:     /Freelancer/AjouterFavoris/{pseudo}/{idp}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Favoris:AjouterFavoris } 
+
+freelance_front_SupprimerFavoris :
+    path:     /Freelancer/SupprimerFavoris/{idf}/{idp}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Favoris:SupprimerFavoris } 
+
+
+freelance_front_office_AfficherPhotoFreelancer:
+    path:     /Freelance/AfficherPhotoFreelancer/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Freelancer:AfficherPhotoFreelancer }   
+ 
+freelance_front_office_AfficherPhotoJobowner:
+    path:     /Freelance/AfficherPhotoJobowner/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:AfficherPhotoJobowner }  
+ 
+    
+freelance_front_office_JobownerModifier:
+    path:     /Jobowner/JobownerModifier/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Jobowner:JobownerModifier }    
+
+freelance_front_FreelancerMessagerieAjouter:
+    path:     /Freelancer/FreelancerMessagerieAjouter/{pseudo}/{pseudo1}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:FreelancerMessagerieAjouter }  
+freelance_front_FreelancerMessagerieAfficher:
+    path:     /Freelancer/FreelancerMessagerieAfficher/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:FreelancerMessagerieAfficher } 
+freelance_front_FreelancerMessagerieSupprimer:
+    path:     /Freelancer/FreelancerMessagerieSupprimer/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:FreelancerMessagerieSupprimer } 
+freelance_front_FreelancerMessagerieRechercher:
+    path:     /Freelancer/FreelancerMessagerieRechercher/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:FreelancerMessagerieRechercher } 
+    
+freelance_front_JobownerMessagerieAjouter:
+    path:     /Jobowner/JobownerMessagerieAjouter/{pseudo}/{pseudo1}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:JobownerMessagerieAjouter }  
+freelance_front_JobownerMessagerieAfficher:
+    path:     /Jobowner/JobownerMessagerieAfficher/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:JobownerMessagerieAfficher } 
+freelance_front_JobownerMessagerieSupprimer:
+    path:     /Jobowner/JobownerMessagerieSupprimer/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:JobownerMessagerieSupprimer } 
+freelance_front_JobownerMessagerieRechercher:
+    path:     /Jobowner/JobownerMessagerieRechercher/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Messagerie:JobownerMessagerieRechercher }     
+    
+freelance_front_ReclamationAjouter:
+    path:     /Freelance/ReclamationAjouter/{pseudo}/{type}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Reclamation:ReclamationAjouter }   
+ 
+freelance_front_AfficherCvFreelancerJobowner:
+    path:     /Jobowner/AfficherCvFreelancerJobowner/{pseudo}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Cvfreelancer:AfficherCvFreelancerJobowner }     
+
+freelance_front_office_AjouterTest:
+    path:     /Freelancer/AjouterTest/
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:AjouterTest }
+    
+freelance_front_office_AfficherTest:
+    path:     /Freelancer/AfficherTest/{nom}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:AfficherTest }
+
+freelance_front_office_AffichertoutTest:
+    path:     /Freelancer/AffichertoutTest/
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:AffichertoutTest }
+      
+freelance_front_office_ModifierTest:
+    path:     /Freelancer/ModifierTest/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:ModifierTest }
+    
+freelance_front_office_SuprimerTest:
+    path:     /Freelancer/SuprimerTest/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:SuprimerTest }
+    
+freelance_front_office_PassageTest:
+    path:     /Freelancer/PassageTest/{id}/{idf}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Test:PassageTest }
+    
+freelance_front_office_AfficherNotetest:
+    path:     /Freelancer/AfficherNotetest/{idf}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Notetest:AfficherNotetest }  
+    
+freelance_front_office_SuprimerCandidature:
+    path:     /Freelancer/SuprimerCandidature/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Candidature:SuprimerCandidature } 
+
+freelance_front_office_SuprimerCvfreelancer:
+    path:     /Freelancer/SuprimerCvfreelancer/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Cvfreelancer:SuprimerCvfreelancer } 
+    
+freelance_front_office_SuprimerProjet:
+    path:     /Jobowner/SuprimerProjet/{id}
+    defaults: { _controller: FreelanceFrontOfficeBundle:Projet:SuprimerProjet }
+freelance_front_office_AccessDenied:
+    path:     /403
+    defaults: { _controller: FreelanceFrontOfficeBundle:Default:AccessDenied }
+    
+freelance_front_office_AboutUs:
+    path:     /Freelance/AboutUs
+    defaults: { _controller: FreelanceFrontOfficeBundle:Default:AboutUs }

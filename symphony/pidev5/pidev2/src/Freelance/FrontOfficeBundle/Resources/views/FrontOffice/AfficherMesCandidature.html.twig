@@ -1,0 +1,30 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+ {% block content %} 
+<h1> Liste des Candidatures </h1>
+
+<table class="table table-bordered">
+    <thead>
+
+
+        <th> estimation </th>
+        <th> lettre_mot </th>
+        <th> question </th>
+  <th> Modifier </th>
+<th> Suprimer </th>
+    </thead>
+
+{% for c in ca %}
+    <tr>
+
+        <td>{{c.estimation }}</td>
+        <td>{{c.lettre_mot }}</td>
+        <td>{{c.question }}</td>
+        <td><a href="{{path('freelance_front_office_ModifierCandidature',{id:c.id} )}}">Modifier</a></td>
+        <td><a href="{{path('freelance_front_office_SuprimerCandidature',{id:c.id} )}}">Suprimer</a></td>
+
+
+    </tr>
+{% endfor %}
+</table>
+ {% endblock %}

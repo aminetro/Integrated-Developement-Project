@@ -1,0 +1,52 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+
+{% block content %} 
+<h1> Liste des Freelancers </h1>
+<form action="" class="content-form" method="POST">
+  <input type="text" class="input-medium search-query"  placeholder="Rechercher Par Pseudo"size="35" name="search"/>
+    <input type="submit" class="btn btn-primary" value="Recherche">
+
+</form>
+<table class="table table-bordered">
+    <thead>
+
+    <th> nom </th>
+    <th> Prenom </th>
+    <th> Pays </th>
+    <th> Ville </th>
+    <th> Pseudo </th>
+    <th> Email</th>
+    <th> Disponibilite </th>
+    
+
+
+    <th> Photo</th>
+
+<th>Afficher CV</th>
+
+
+</thead>
+
+{% for m in membre %}
+<tr>
+
+    <td>{{m.nom}}</td>
+    <td>{{m.prenom }}</td>
+    <td>{{m.pays }}</td>
+    <td>{{m.ville }}</td>
+    <td>{{m.pseudo }}</td>
+    <td>{{m.email }}</td>
+    <td>{{m.disponibilite_f }}</td>
+    <td><img  class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="{{ asset(path('freelance_front_office_AfficherPhotoFreelancer', {'pseudo': m.pseudo})) }}"/> </td>
+ <td><a href="{{path('freelance_front_AfficherCvFreelancerJobowner',{pseudo:m.pseudo} )}}">Afficher CV</a></td>
+ 
+<td>
+								<a href="{{ asset(path('freelance_front_JobownerMessagerieAjouter', {'pseudo':app.user.pseudo ,'pseudo1':m.pseudo })) }}">Envoyer Un Message</a>
+							</td>
+ 
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+

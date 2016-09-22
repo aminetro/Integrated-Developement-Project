@@ -1,0 +1,6 @@
+freelance_google_map_homepage:
+    path:     /map
+    defaults: { _controller: FreelanceGoogleMapBundle:Default:index }
+
+
+

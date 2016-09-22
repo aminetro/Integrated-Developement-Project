@@ -1,0 +1,44 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+{% block content %} 
+<div class="container">
+
+					<div class="row">
+
+<div class="span6">
+
+    <div class="alert alert-success hidden" id="contactSuccess">
+        <strong>Success!</strong> Your message has been sent to us.
+    </div>
+
+    <div class="alert alert-error hidden" id="contactError">
+        <strong>Error!</strong> There was an error sending your message.
+    </div>
+
+    <h2 class="short"><strong>Modifier </strong>Mon Projet</h2>
+    <form action="" id="contactForm" method="post">
+        <div class="row controls">
+            <div class="span6 control-group">
+
+<label>{{form_label(form.titre_p)}}</label>
+                {{ form_widget(form.titre_p) }}
+
+                        <label >{{form_label(form.categorie_p)}}</label>
+                {{ form_widget(form.categorie_p) }}
+
+                        <label >{{form_label(form.duree_p)}}</label>
+                {{ form_widget(form.duree_p) }}
+
+                        <label >{{form_label(form.description_p)}}</label>
+                {{ form_widget(form.description_p) }}
+
+                <div class="btn-toolbar">
+                    <input type="submit" value="Modifier Mon Projet" class="btn btn-primary btn-large" data-loading-text="Loading...">
+
+                </div>
+            </div>
+                      {{ form_rest(form)}}
+ </div>
+    </form> </div> </div> </div> 
+
+ {% endblock %} 

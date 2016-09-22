@@ -1,0 +1,15 @@
+Administrateur:
+    type: entity
+    table: administrateur
+    id: {  }
+    oneToOne:
+        idA:
+            targetEntity: Membre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_a:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+{% block titre %}Creation D'un Test{% endblock %}
+{%block content%}
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('freelance_front_office_AffichertoutTest') }}">
+            Back to the list
+        </a>
+    </li>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    freelance_swift_mail.example:
+#        class: Freelance\SwiftMailBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

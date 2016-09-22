@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+        <style type="text/css"> html , body ,  #map-canvas { height: 100% ;  margin : 0; padding: 0;} </style>
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZX3xudxZvqgFA9ofVUiiwVc8n8rEut0k">
+        </script>
+        <script type="text/javascript">
+            
+    function initialize()
+            { 
+                var lat= document.getElementById('lat').value;
+                var lng= document.getElementById('lng').value;
+                var myCenter = new google.maps.LatLng (lat , lng);
+                var marker;
+                
+                var mapOptions = {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8
+                };
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapOptions);
+                var myLatlng = new google.maps.LatLng(36.901175, 10.190592);
+                
+                var mapOptions = {
+                    zoom: 15,
+                    center: myLatlng
+                }
+                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                //Adding the Mark to the map
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: "Position Actuelle "
+                    
+                });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+        
+    </head>
+    <body>
+        {% block container %}
+            <div id="map-canvas"> </div> 
+        {% endblock %}
+    </body>
+        
+</html>

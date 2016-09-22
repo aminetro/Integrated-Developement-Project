@@ -1,0 +1,14 @@
+freelance_swift_mail_homepage:
+    path:     /helloo/{name}
+    defaults: { _controller: FreelanceSwiftMailBundle:Default:index }
+freelance_swift_mail_form:
+    path:      /mail
+    defaults: { _controller: FreelanceSwiftMailBundle:Default:new }
+    
+freelance_swift_mail_sendMail:
+    path:      /sendmail
+    defaults: { _controller: FreelanceSwiftMailBundle:Default:sendMail }
+    
+freelance_front_CantactUs:
+    path:     /CantactUs
+    defaults: { _controller: FreelanceSwiftMailBundle:Default:CantactUs } 

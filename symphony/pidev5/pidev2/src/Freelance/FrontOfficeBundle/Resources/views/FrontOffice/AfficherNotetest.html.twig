@@ -1,0 +1,25 @@
+{%extends 'FreelanceFrontOfficeBundle::layout.html.twig' %}
+
+{%block content%}
+
+
+<h1> Liste des notes</h1>
+
+<table border=1>
+    <tr>
+       
+         <th> nom de test </th>
+          <th> note </th>
+               
+    </tr>
+
+{% for c in entities %}
+    <tr>
+
+<td>{{c.nom_test}}</td>
+<td>{{c.note_test }}</td>
+
+</tr>
+{% endfor %}
+</table>
+{%endblock%}
